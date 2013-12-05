@@ -66,9 +66,7 @@ namespace iverson_sigma
         {
             treeViewDecisions.BeginUpdate();
             treeViewDecisions.Nodes.Clear();
-            TreeNode root = new TreeNode("List value: " + listProcessed[list.Length - 1][0]);
-            treeViewDecisions.Nodes.Add(root);
-            MakeTree(root.Nodes, list.Length - 1);
+            MakeTree(treeViewDecisions.Nodes, list.Length - 1);
             treeViewDecisions.EndUpdate();
         }
 
