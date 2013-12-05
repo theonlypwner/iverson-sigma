@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("iverson-sigma")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Iverson Exam Sigma Game List Value")]
+[assembly: AssemblyDescription("This calculates the value of a list for the sigma game from the 2013 Iverson Exam.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Victor Zheng")]
 [assembly: AssemblyProduct("iverson-sigma")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright © Victor Zheng 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
