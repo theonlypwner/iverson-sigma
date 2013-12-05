@@ -16,7 +16,8 @@ namespace iverson_sigma
             InitializeComponent();
         }
 
-        private readonly Color color_highlight = Color.YellowGreen;
+        private readonly Color color_highlight1 = Color.YellowGreen;
+        private readonly Color color_highlight2 = Color.DarkOrange;
 
         private int[] list;
         private int[][] listProcessed;
@@ -42,23 +43,33 @@ namespace iverson_sigma
         private void MakeTree(TreeNodeCollection parent, int depth, int position = 0, int player = 1)
         {
             int val1 = list[position] - listProcessed[depth - 1][position + 1];
-            int val2 = list[position + depth] - listProcessed[depth - 1][position];
             TreeNode choice1 = new TreeNode(
-                String.Format("P{0} L {1} ({2})", player, list[position], val1)
+                String.Format("P{0} L {1}{2:+#;-#;+0}={3}",
+                    player,
+                    list[position],
+                    -listProcessed[depth - 1][position + 1],
+                    val1
+                )
             );
+            int val2 = list[position + depth] - listProcessed[depth - 1][position];
             TreeNode choice2 = new TreeNode(
-                String.Format("P{0} R {1} ({2})", player, list[position + depth], val2)
+                String.Format("P{0} R {1}{2:+#;-#;+0}={3}",
+                    player,
+                    list[position + depth],
+                    -listProcessed[depth - 1][position],
+                    val2
+                )
             );
             if (val1 >= val2)
-                choice1.BackColor = color_highlight;
+                choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
             if (val2 >= val1)
-                choice2.BackColor = color_highlight;
+                choice2.BackColor = player == 1 ? color_highlight1 : color_highlight2;
             parent.Add(choice1);
             parent.Add(choice2);
             if (depth > 1)
             {
-                MakeTree(choice1.Nodes, depth - 1, position, player ^ 3);
-                MakeTree(choice2.Nodes, depth - 1, position + 1, player ^ 3);
+                MakeTree(choice1.Nodes, depth - 1, position + 1, player ^ 3);
+                MakeTree(choice2.Nodes, depth - 1, position, player ^ 3);
             }
         }
 
