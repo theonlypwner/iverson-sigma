@@ -22,6 +22,17 @@ namespace iverson_sigma
         private int[] list;
         private int[][] listProcessed;
 
+        public struct SublistInfo
+        {
+            public bool isLeft;
+            // Range
+            public int start, end;
+            // Node value
+            public int value, opposition;
+            // Accumulated Values
+            public int p1, p2;
+        }
+
         private void Recalc()
         {
             // Make the array
@@ -42,27 +53,40 @@ namespace iverson_sigma
 
         private void MakeTree(TreeNodeCollection parent, int depth, int position = 0, int player = 1)
         {
-            int val1 = list[position] - listProcessed[depth - 1][position + 1];
+            // Build choice information
+            SublistInfo info1 = new SublistInfo(), info2 = new SublistInfo();
+            info1.isLeft = true;
+            info2.isLeft = false;
+            info1.start = info2.start = position;
+            info1.end = info2.end = position + depth;
+
+            info1.value = list[position];
+            info1.opposition = listProcessed[depth - 1][position + 1];
+            info2.value = list[position + depth];
+            info2.opposition = listProcessed[depth - 1][position];
+
+            // Make nodes
             TreeNode choice1 = new TreeNode(
                 String.Format("P{0} L {1}{2:+#;-#;+0}={3}",
                     player,
-                    list[position],
-                    -listProcessed[depth - 1][position + 1],
-                    val1
+                    info1.value,
+                    -info1.opposition,
+                    info1.value - info1.opposition
                 )
             );
-            int val2 = list[position + depth] - listProcessed[depth - 1][position];
+            choice1.Tag = info1;
             TreeNode choice2 = new TreeNode(
                 String.Format("P{0} R {1}{2:+#;-#;+0}={3}",
                     player,
-                    list[position + depth],
-                    -listProcessed[depth - 1][position],
-                    val2
+                    info2.value,
+                    -info2.opposition,
+                    info2.value - info2.opposition
                 )
             );
-            if (val1 >= val2)
+            choice2.Tag = info2;
+            if (info1.value + info2.opposition >= info2.value + info1.opposition) // (info1.value - info1.opposition >= info2.value - info2.opposition)
                 choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
-            if (val2 >= val1)
+            if (info2.value + info1.opposition >= info1.value + info2.opposition) // (info2.value - info2.opposition >= info1.value - info1.opposition)
                 choice2.BackColor = player == 1 ? color_highlight1 : color_highlight2;
             parent.Add(choice1);
             parent.Add(choice2);
@@ -79,12 +103,6 @@ namespace iverson_sigma
             treeViewDecisions.Nodes.Clear();
             MakeTree(treeViewDecisions.Nodes, list.Length - 1);
             treeViewDecisions.EndUpdate();
-        }
-
-        private void RecalcAndRedraw()
-        {
-            Recalc();
-            MakeTree();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -113,7 +131,34 @@ namespace iverson_sigma
 
             // Recalculate the list
             list = (int []) numbers_int.ToArray(typeof(int));
-            RecalcAndRedraw();
+            Recalc();
+
+            // Make the tree
+            MakeTree();
+        }
+
+        private void treeViewDecisions_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            SublistInfo info = (SublistInfo) e.Node.Tag;
+            // Fill out sublist
+            if (info.isLeft)
+            {
+                txtSublist.Text = list[info.start].ToString() + " [";
+                for (int i = info.start + 1; i <= info.end; ++i)
+                    txtSublist.Text += list[i].ToString() + (i == info.end ? "]" : " ");
+            }
+            else
+            {
+                txtSublist.Text = "[";
+                for (int i = info.start; i < info.end; ++i)
+                    txtSublist.Text += list[i].ToString() + (i + 1 == info.end ? "] " : " ");
+                txtSublist.Text += list[info.end].ToString();
+            }
+            // Choice info
+            lblSelectionInfo.Text = String.Format("{0}{1:+#;-#;+0}={2} (# - Opposition = Value)", info.value, -info.opposition, info.value - info.opposition);
+            lblSelectionAccumulated.Text = String.Format("?-?=? (P1-P2=Accmulated)", info.p1, info.p2, info.p1 - info.p2);
+            // Choose First
+            // Choose Last
         }
     }
 }
