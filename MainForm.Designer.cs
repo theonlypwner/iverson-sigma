@@ -31,26 +31,20 @@
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblList = new System.Windows.Forms.Label();
             this.grpInfo = new System.Windows.Forms.GroupBox();
-            this.grpInfoFirst = new System.Windows.Forms.GroupBox();
-            this.lblFirstAccumulated = new System.Windows.Forms.Label();
-            this.lblFirstValue = new System.Windows.Forms.Label();
-            this.lblFirstOpposition = new System.Windows.Forms.Label();
-            this.txtSublist = new System.Windows.Forms.TextBox();
+            this.lblInfoValue = new System.Windows.Forms.Label();
+            this.txtInfoSublist = new System.Windows.Forms.TextBox();
+            this.lblInfoOpposition = new System.Windows.Forms.Label();
             this.treeViewDecisions = new System.Windows.Forms.TreeView();
-            this.lblSelectionInfo = new System.Windows.Forms.Label();
-            this.lblSelectionAccumulated = new System.Windows.Forms.Label();
-            this.grpInfoLast = new System.Windows.Forms.GroupBox();
-            this.lblLastAccumulated = new System.Windows.Forms.Label();
-            this.lblLastValue = new System.Windows.Forms.Label();
-            this.lblLastOpposition = new System.Windows.Forms.Label();
+            this.lblInfoP1 = new System.Windows.Forms.Label();
+            this.lblInfoP2 = new System.Windows.Forms.Label();
+            this.lblInfoAccumulated = new System.Windows.Forms.Label();
+            this.lblInfoNumber = new System.Windows.Forms.Label();
             this.grpInfo.SuspendLayout();
-            this.grpInfoFirst.SuspendLayout();
-            this.grpInfoLast.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // txtInput
-            // 
-            this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            this.txtInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.84F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInput.Location = new System.Drawing.Point(66, 14);
@@ -60,9 +54,9 @@
             this.txtInput.TabIndex = 0;
             this.txtInput.Text = "1 4 5 2 3 3 5 1";
             this.txtInput.LostFocus += new System.EventHandler(this.txtInput_LostFocus);
-            // 
+            //
             // lblList
-            // 
+            //
             this.lblList.AutoSize = true;
             this.lblList.Location = new System.Drawing.Point(14, 22);
             this.lblList.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -70,156 +64,112 @@
             this.lblList.Size = new System.Drawing.Size(42, 20);
             this.lblList.TabIndex = 2;
             this.lblList.Text = "List:";
-            // 
+            //
             // grpInfo
-            // 
-            this.grpInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            //
+            this.grpInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpInfo.Controls.Add(this.lblSelectionAccumulated);
-            this.grpInfo.Controls.Add(this.grpInfoLast);
-            this.grpInfo.Controls.Add(this.grpInfoFirst);
-            this.grpInfo.Controls.Add(this.txtSublist);
-            this.grpInfo.Controls.Add(this.lblSelectionInfo);
+            this.grpInfo.Controls.Add(this.lblInfoAccumulated);
+            this.grpInfo.Controls.Add(this.lblInfoP2);
+            this.grpInfo.Controls.Add(this.lblInfoP1);
+            this.grpInfo.Controls.Add(this.lblInfoValue);
+            this.grpInfo.Controls.Add(this.txtInfoSublist);
+            this.grpInfo.Controls.Add(this.lblInfoNumber);
+            this.grpInfo.Controls.Add(this.lblInfoOpposition);
             this.grpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpInfo.Location = new System.Drawing.Point(370, 56);
             this.grpInfo.Margin = new System.Windows.Forms.Padding(5);
             this.grpInfo.Name = "grpInfo";
             this.grpInfo.Padding = new System.Windows.Forms.Padding(5);
-            this.grpInfo.Size = new System.Drawing.Size(300, 301);
+            this.grpInfo.Size = new System.Drawing.Size(300, 241);
             this.grpInfo.TabIndex = 3;
             this.grpInfo.TabStop = false;
             this.grpInfo.Text = "Information";
-            // 
-            // grpInfoFirst
-            // 
-            this.grpInfoFirst.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            // lblInfoValue
+            //
+            this.lblInfoValue.AutoSize = true;
+            this.lblInfoValue.Location = new System.Drawing.Point(8, 96);
+            this.lblInfoValue.Name = "lblInfoValue";
+            this.lblInfoValue.Size = new System.Drawing.Size(67, 20);
+            this.lblInfoValue.TabIndex = 0;
+            this.lblInfoValue.Text = "Value: ?";
+            //
+            // txtInfoSublist
+            //
+            this.txtInfoSublist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpInfoFirst.Controls.Add(this.lblFirstAccumulated);
-            this.grpInfoFirst.Controls.Add(this.lblFirstValue);
-            this.grpInfoFirst.Controls.Add(this.lblFirstOpposition);
-            this.grpInfoFirst.Location = new System.Drawing.Point(8, 99);
-            this.grpInfoFirst.Name = "grpInfoFirst";
-            this.grpInfoFirst.Size = new System.Drawing.Size(284, 94);
-            this.grpInfoFirst.TabIndex = 1;
-            this.grpInfoFirst.TabStop = false;
-            this.grpInfoFirst.Text = "Choose First (?)";
-            // 
-            // lblFirstAccumulated
-            // 
-            this.lblFirstAccumulated.AutoSize = true;
-            this.lblFirstAccumulated.Location = new System.Drawing.Point(6, 65);
-            this.lblFirstAccumulated.Name = "lblFirstAccumulated";
-            this.lblFirstAccumulated.Size = new System.Drawing.Size(200, 20);
-            this.lblFirstAccumulated.TabIndex = 0;
-            this.lblFirstAccumulated.Text = "?-?=? (P1-P2=Accmulated)";
-            // 
-            // lblFirstValue
-            // 
-            this.lblFirstValue.AutoSize = true;
-            this.lblFirstValue.Location = new System.Drawing.Point(6, 45);
-            this.lblFirstValue.Name = "lblFirstValue";
-            this.lblFirstValue.Size = new System.Drawing.Size(138, 20);
-            this.lblFirstValue.TabIndex = 0;
-            this.lblFirstValue.Text = "Maximum Value: ?";
-            // 
-            // lblFirstOpposition
-            // 
-            this.lblFirstOpposition.AutoSize = true;
-            this.lblFirstOpposition.Location = new System.Drawing.Point(6, 23);
-            this.lblFirstOpposition.Name = "lblFirstOpposition";
-            this.lblFirstOpposition.Size = new System.Drawing.Size(102, 20);
-            this.lblFirstOpposition.TabIndex = 0;
-            this.lblFirstOpposition.Text = "Opposition: ?";
-            // 
-            // txtSublist
-            // 
-            this.txtSublist.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSublist.Location = new System.Drawing.Point(10, 27);
-            this.txtSublist.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSublist.Name = "txtSublist";
-            this.txtSublist.ReadOnly = true;
-            this.txtSublist.Size = new System.Drawing.Size(280, 24);
-            this.txtSublist.TabIndex = 0;
-            this.txtSublist.Text = "? ? ?";
-            this.txtSublist.LostFocus += new System.EventHandler(this.txtInput_LostFocus);
-            // 
+            this.txtInfoSublist.Location = new System.Drawing.Point(10, 27);
+            this.txtInfoSublist.Margin = new System.Windows.Forms.Padding(5);
+            this.txtInfoSublist.Name = "txtInfoSublist";
+            this.txtInfoSublist.ReadOnly = true;
+            this.txtInfoSublist.Size = new System.Drawing.Size(280, 24);
+            this.txtInfoSublist.TabIndex = 0;
+            this.txtInfoSublist.Text = "? ? ?";
+            this.txtInfoSublist.LostFocus += new System.EventHandler(this.txtInput_LostFocus);
+            //
+            // lblInfoOpposition
+            //
+            this.lblInfoOpposition.AutoSize = true;
+            this.lblInfoOpposition.Location = new System.Drawing.Point(8, 76);
+            this.lblInfoOpposition.Name = "lblInfoOpposition";
+            this.lblInfoOpposition.Size = new System.Drawing.Size(139, 20);
+            this.lblInfoOpposition.TabIndex = 0;
+            this.lblInfoOpposition.Text = "Best Opposition: ?";
+            //
             // treeViewDecisions
-            // 
-            this.treeViewDecisions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            //
+            this.treeViewDecisions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeViewDecisions.Location = new System.Drawing.Point(11, 53);
             this.treeViewDecisions.Margin = new System.Windows.Forms.Padding(2);
             this.treeViewDecisions.Name = "treeViewDecisions";
-            this.treeViewDecisions.Size = new System.Drawing.Size(352, 307);
+            this.treeViewDecisions.Size = new System.Drawing.Size(352, 247);
             this.treeViewDecisions.TabIndex = 4;
             this.treeViewDecisions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewDecisions_AfterSelect);
-            // 
-            // lblSelectionInfo
-            // 
-            this.lblSelectionInfo.AutoSize = true;
-            this.lblSelectionInfo.Location = new System.Drawing.Point(8, 56);
-            this.lblSelectionInfo.Name = "lblSelectionInfo";
-            this.lblSelectionInfo.Size = new System.Drawing.Size(220, 20);
-            this.lblSelectionInfo.TabIndex = 0;
-            this.lblSelectionInfo.Text = "?-?=? (# - Opposition = Value)";
-            // 
-            // lblSelectionAccumulated
-            // 
-            this.lblSelectionAccumulated.AutoSize = true;
-            this.lblSelectionAccumulated.Location = new System.Drawing.Point(8, 76);
-            this.lblSelectionAccumulated.Name = "lblSelectionAccumulated";
-            this.lblSelectionAccumulated.Size = new System.Drawing.Size(200, 20);
-            this.lblSelectionAccumulated.TabIndex = 0;
-            this.lblSelectionAccumulated.Text = "?-?=? (P1-P2=Accmulated)";
-            // 
-            // grpInfoLast
-            // 
-            this.grpInfoLast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpInfoLast.Controls.Add(this.lblLastAccumulated);
-            this.grpInfoLast.Controls.Add(this.lblLastValue);
-            this.grpInfoLast.Controls.Add(this.lblLastOpposition);
-            this.grpInfoLast.Location = new System.Drawing.Point(8, 199);
-            this.grpInfoLast.Name = "grpInfoLast";
-            this.grpInfoLast.Size = new System.Drawing.Size(284, 94);
-            this.grpInfoLast.TabIndex = 1;
-            this.grpInfoLast.TabStop = false;
-            this.grpInfoLast.Text = "Choose Last (?)";
-            // 
-            // lblLastAccumulated
-            // 
-            this.lblLastAccumulated.AutoSize = true;
-            this.lblLastAccumulated.Location = new System.Drawing.Point(6, 65);
-            this.lblLastAccumulated.Name = "lblLastAccumulated";
-            this.lblLastAccumulated.Size = new System.Drawing.Size(200, 20);
-            this.lblLastAccumulated.TabIndex = 0;
-            this.lblLastAccumulated.Text = "?-?=? (P1-P2=Accmulated)";
-            // 
-            // lblLastValue
-            // 
-            this.lblLastValue.AutoSize = true;
-            this.lblLastValue.Location = new System.Drawing.Point(6, 45);
-            this.lblLastValue.Name = "lblLastValue";
-            this.lblLastValue.Size = new System.Drawing.Size(138, 20);
-            this.lblLastValue.TabIndex = 0;
-            this.lblLastValue.Text = "Maximum Value: ?";
-            // 
-            // lblLastOpposition
-            // 
-            this.lblLastOpposition.AutoSize = true;
-            this.lblLastOpposition.Location = new System.Drawing.Point(6, 23);
-            this.lblLastOpposition.Name = "lblLastOpposition";
-            this.lblLastOpposition.Size = new System.Drawing.Size(102, 20);
-            this.lblLastOpposition.TabIndex = 0;
-            this.lblLastOpposition.Text = "Opposition: ?";
-            // 
+            //
+            // lblInfoP1
+            //
+            this.lblInfoP1.AutoSize = true;
+            this.lblInfoP1.Location = new System.Drawing.Point(8, 174);
+            this.lblInfoP1.Name = "lblInfoP1";
+            this.lblInfoP1.Size = new System.Drawing.Size(142, 20);
+            this.lblInfoP1.TabIndex = 0;
+            this.lblInfoP1.Text = "P1 Accumulated: ?";
+            //
+            // lblInfoP2
+            //
+            this.lblInfoP2.AutoSize = true;
+            this.lblInfoP2.Location = new System.Drawing.Point(8, 194);
+            this.lblInfoP2.Name = "lblInfoP2";
+            this.lblInfoP2.Size = new System.Drawing.Size(142, 20);
+            this.lblInfoP2.TabIndex = 0;
+            this.lblInfoP2.Text = "P2 Accumulated: ?";
+            //
+            // lblInfoAccumulated
+            //
+            this.lblInfoAccumulated.AutoSize = true;
+            this.lblInfoAccumulated.Location = new System.Drawing.Point(8, 214);
+            this.lblInfoAccumulated.Name = "lblInfoAccumulated";
+            this.lblInfoAccumulated.Size = new System.Drawing.Size(164, 20);
+            this.lblInfoAccumulated.TabIndex = 0;
+            this.lblInfoAccumulated.Text = "Accumulated Value: ?";
+            //
+            // lblInfoNumber
+            //
+            this.lblInfoNumber.AutoSize = true;
+            this.lblInfoNumber.Location = new System.Drawing.Point(8, 56);
+            this.lblInfoNumber.Name = "lblInfoNumber";
+            this.lblInfoNumber.Size = new System.Drawing.Size(82, 20);
+            this.lblInfoNumber.TabIndex = 0;
+            this.lblInfoNumber.Text = "Number: ?";
+            //
             // MainForm
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 371);
+            this.ClientSize = new System.Drawing.Size(684, 311);
             this.Controls.Add(this.treeViewDecisions);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.lblList);
@@ -233,10 +183,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpInfo.ResumeLayout(false);
             this.grpInfo.PerformLayout();
-            this.grpInfoFirst.ResumeLayout(false);
-            this.grpInfoFirst.PerformLayout();
-            this.grpInfoLast.ResumeLayout(false);
-            this.grpInfoLast.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,17 +194,13 @@
         private System.Windows.Forms.Label lblList;
         private System.Windows.Forms.GroupBox grpInfo;
         private System.Windows.Forms.TreeView treeViewDecisions;
-        private System.Windows.Forms.TextBox txtSublist;
-        private System.Windows.Forms.GroupBox grpInfoFirst;
-        private System.Windows.Forms.Label lblFirstOpposition;
-        private System.Windows.Forms.Label lblFirstValue;
-        private System.Windows.Forms.Label lblFirstAccumulated;
-        private System.Windows.Forms.Label lblSelectionInfo;
-        private System.Windows.Forms.Label lblSelectionAccumulated;
-        private System.Windows.Forms.GroupBox grpInfoLast;
-        private System.Windows.Forms.Label lblLastAccumulated;
-        private System.Windows.Forms.Label lblLastValue;
-        private System.Windows.Forms.Label lblLastOpposition;
+        private System.Windows.Forms.TextBox txtInfoSublist;
+        private System.Windows.Forms.Label lblInfoOpposition;
+        private System.Windows.Forms.Label lblInfoValue;
+        private System.Windows.Forms.Label lblInfoAccumulated;
+        private System.Windows.Forms.Label lblInfoP2;
+        private System.Windows.Forms.Label lblInfoP1;
+        private System.Windows.Forms.Label lblInfoNumber;
     }
 }
 
