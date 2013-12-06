@@ -160,6 +160,13 @@ namespace iverson_sigma
                 }
             }
 
+            // Check for an empty list
+            if (numbers_int.Count == 0)
+            {
+                numbers_int.Add(0);
+                numbers_str.Add("0");
+            }
+
             // Set the text to something valid
             txtInput.Text = String.Join(" ", (string[])numbers_str.ToArray(typeof(string)));
 
