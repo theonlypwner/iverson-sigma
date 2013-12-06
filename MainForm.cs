@@ -43,10 +43,13 @@ namespace iverson_sigma
 
             public int opposition { get
             {
+                // Special case: last depth: no opposition
                 if (depth == 0)
                     return 0;
+                // Special case: 2 choices left
                 if (depth == 1)
                     return list[isLeft ? position + 1 : position];
+                // Use computed sublist values
                 if(isLeft)
                     return listProcessed[depth - 1][position + 1];
                 else
@@ -137,6 +140,7 @@ namespace iverson_sigma
             treeViewDecisions.Nodes.Clear();
             MakeTree(treeViewDecisions.Nodes, list.Length - 1);
             treeViewDecisions.EndUpdate();
+            treeViewDecisions.SelectedNode = treeViewDecisions.Nodes[0];
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -204,7 +208,7 @@ namespace iverson_sigma
             // Update choice info
             lblInfoNumber.Text = "Number: " + info.number.ToString();
             if (info.depth == 0)
-                lblInfoOpposition.Text = "No opposition: final choice";
+                lblInfoOpposition.Text = "Opposition: None (final item)";
             else
                 lblInfoOpposition.Text = "Opposition: " + info.opposition.ToString();
             lblInfoValue.Text = "Value: " + (info.number - info.opposition).ToString();
