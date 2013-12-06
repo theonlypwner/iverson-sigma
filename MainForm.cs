@@ -97,7 +97,10 @@ namespace iverson_sigma
             if (depth == 0)
             {
                 // Add terminal node
-                TreeNode choice1 = new TreeNode(String.Format("P{0} Final {1}", player, info1.number));
+                TreeNode choice1 = new TreeNode(String.Format(
+                    "P{0} Final {1} ({2}{3:+#;-#;+0}={4})",
+                    player, info1.number, info1.p1, -info1.p2, info1.p1 - info1.p2
+                ));
                 choice1.Tag = info1;
                 choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
                 parent.Add(choice1);
@@ -105,23 +108,23 @@ namespace iverson_sigma
             else
             {
                 // Non-terminal nodes
-                TreeNode choice1 = new TreeNode(
-                    String.Format("P{0} L {1}{2:+#;-#;+0}={3}",
-                        player,
-                        info1.number,
-                        -info1.opposition,
-                        info1.number - info1.opposition
-                    )
-                );
+                TreeNode choice1 = new TreeNode(String.Format(
+                    "P{0} L {1}{2:+#;-#;+0}={3} ({4})",
+                    player,
+                    info1.number,
+                    -info1.opposition,
+                    info1.number - info1.opposition,
+                    info1.p1 - info1.p2
+                ));
                 choice1.Tag = info1;
-                TreeNode choice2 = new TreeNode(
-                    String.Format("P{0} R {1}{2:+#;-#;+0}={3}",
-                        player,
-                        info2.number,
-                        -info2.opposition,
-                        info2.number - info2.opposition
-                    )
-                );
+                TreeNode choice2 = new TreeNode(String.Format(
+                    "P{0} R {1}{2:+#;-#;+0}={3} ({4})",
+                    player,
+                    info2.number,
+                    -info2.opposition,
+                    info2.number - info2.opposition,
+                    info2.p1 - info2.p2
+                ));
                 choice2.Tag = info2;
                 if (info1.number + info2.opposition >= info2.number + info1.opposition) // (info1.value - info1.opposition >= info2.value - info2.opposition)
                     choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
