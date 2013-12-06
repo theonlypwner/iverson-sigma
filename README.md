@@ -5,6 +5,8 @@ This calculates the value of a list for the sigma game from the 2013 Iverson Exa
 
 It also allows you to browse the entire decision tree.
 
+![screenshot](https://raw.github.com/theonlypwner/iverson-sigma/master/screenshot.png)
+
 Licence
 -----------
 This project is licensed under the GPL v3 licence.
@@ -14,6 +16,7 @@ The logo is from Everaldo Coelho's Crystal Project Icons, which is licensed unde
 Excerpt from Solution
 -----------
 **question 4: sigma game**
+
 Alice and Bob play a game called *sigma*. The input is a list of numbers. Alice goes first. They
 alternate turns. On a turn, a player takes (and removes) either the first number or last number
 from the list. The game ends when all numbers are gone. A player’s score is the sum of the
