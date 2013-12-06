@@ -39,6 +39,7 @@
             this.lblInfoNumber = new System.Windows.Forms.Label();
             this.lblInfoOpposition = new System.Windows.Forms.Label();
             this.treeViewDecisions = new System.Windows.Forms.TreeView();
+            this.chkPartial = new System.Windows.Forms.CheckBox();
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             this.txtInput.Location = new System.Drawing.Point(66, 14);
             this.txtInput.Margin = new System.Windows.Forms.Padding(5);
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(604, 32);
+            this.txtInput.Size = new System.Drawing.Size(531, 32);
             this.txtInput.TabIndex = 0;
             this.txtInput.Text = "1 4 5 2 3 3 5 1";
             this.txtInput.LostFocus += new System.EventHandler(this.txtInput_LostFocus);
@@ -166,11 +167,25 @@
             this.treeViewDecisions.TabIndex = 4;
             this.treeViewDecisions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewDecisions_AfterSelect);
             // 
+            // chkPartial
+            // 
+            this.chkPartial.Appearance = System.Windows.Forms.Appearance.Button;
+            this.chkPartial.AutoSize = true;
+            this.chkPartial.Checked = true;
+            this.chkPartial.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPartial.Location = new System.Drawing.Point(605, 14);
+            this.chkPartial.Name = "chkPartial";
+            this.chkPartial.Size = new System.Drawing.Size(67, 30);
+            this.chkPartial.TabIndex = 5;
+            this.chkPartial.Text = "Partial";
+            this.chkPartial.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 311);
+            this.Controls.Add(this.chkPartial);
             this.Controls.Add(this.treeViewDecisions);
             this.Controls.Add(this.grpInfo);
             this.Controls.Add(this.lblList);
@@ -202,6 +217,7 @@
         private System.Windows.Forms.Label lblInfoP2;
         private System.Windows.Forms.Label lblInfoP1;
         private System.Windows.Forms.Label lblInfoNumber;
+        private System.Windows.Forms.CheckBox chkPartial;
     }
 }
 

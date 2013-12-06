@@ -130,14 +130,18 @@ namespace iverson_sigma
                     player, info2.number, info2.opposition, info2.p1, info2.p2, info2.p1 - info2.p2
                 );
                 choice2.Tag = info2;
-                if (info1.number + info2.opposition >= info2.number + info1.opposition) // (info1.value - info1.opposition >= info2.value - info2.opposition)
+                bool best1 = info1.number + info2.opposition >= info2.number + info1.opposition; // (info1.value - info1.opposition >= info2.value - info2.opposition)
+                bool best2 = info2.number + info1.opposition >= info1.number + info2.opposition; // (info2.value - info2.opposition >= info1.value - info1.opposition)
+                if (best1)
                     choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
-                if (info2.number + info1.opposition >= info1.number + info2.opposition) // (info2.value - info2.opposition >= info1.value - info1.opposition)
+                if (best2)
                     choice2.BackColor = player == 1 ? color_highlight1 : color_highlight2;
                 parent.Add(choice1);
                 parent.Add(choice2);
-                MakeTree(choice1.Nodes, depth - 1, position + 1, info1.p1, info1.p2, player ^ 3);
-                MakeTree(choice2.Nodes, depth - 1, position, info2.p1, info2.p2, player ^ 3);
+                if (!chkPartial.Checked || best1)
+                    MakeTree(choice1.Nodes, depth - 1, position + 1, info1.p1, info1.p2, player ^ 3);
+                if (!chkPartial.Checked || best2)
+                    MakeTree(choice2.Nodes, depth - 1, position, info2.p1, info2.p2, player ^ 3);
             }
         }
 
