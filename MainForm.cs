@@ -98,9 +98,13 @@ namespace iverson_sigma
             {
                 // Add terminal node
                 TreeNode choice1 = new TreeNode(String.Format(
-                    "P{0} Final {1} ({2}{3:+#;-#;+0}={4})",
+                    "P{0} F {1} ({2}{3:+#;-#;+0}={4})",
                     player, info1.number, info1.p1, -info1.p2, info1.p1 - info1.p2
                 ));
+                choice1.ToolTipText = String.Format(
+                    "Player {0} takes the final item, {1}; player 1 has {2} points, while player 2 has {3} points, and has a final value of {4}.",
+                    player, info1.number, info1.p1, info1.p2, info1.p1 - info1.p2
+                );
                 choice1.Tag = info1;
                 choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
                 parent.Add(choice1);
@@ -110,21 +114,21 @@ namespace iverson_sigma
                 // Non-terminal nodes
                 TreeNode choice1 = new TreeNode(String.Format(
                     "P{0} L {1}{2:+#;-#;+0}={3} ({4})",
-                    player,
-                    info1.number,
-                    -info1.opposition,
-                    info1.number - info1.opposition,
-                    info1.p1 - info1.p2
+                    player, info1.number, -info1.opposition, info1.number - info1.opposition, info1.p1 - info1.p2
                 ));
+                choice1.ToolTipText = String.Format(
+                    "Player {0} takes the first item, {1}, leaving {2} for the opponent. So far, player 1 has accumulated {3} points, while player 2 has {4} points, and has a value of {5}.",
+                    player, info1.number, info1.opposition, info1.p1, info1.p2, info1.p1 - info1.p2
+                );
                 choice1.Tag = info1;
                 TreeNode choice2 = new TreeNode(String.Format(
                     "P{0} R {1}{2:+#;-#;+0}={3} ({4})",
-                    player,
-                    info2.number,
-                    -info2.opposition,
-                    info2.number - info2.opposition,
-                    info2.p1 - info2.p2
+                    player, info2.number, -info2.opposition, info2.number - info2.opposition, info2.p1 - info2.p2
                 ));
+                choice2.ToolTipText = String.Format(
+                    "Player {0} takes the first item, {1}, leaving {2} for the opponent. So far, player 1 has accumulated {3} points, while player 2 has {4} points, and has a value of {5}.",
+                    player, info2.number, info2.opposition, info2.p1, info2.p2, info2.p1 - info2.p2
+                );
                 choice2.Tag = info2;
                 if (info1.number + info2.opposition >= info2.number + info1.opposition) // (info1.value - info1.opposition >= info2.value - info2.opposition)
                     choice1.BackColor = player == 1 ? color_highlight1 : color_highlight2;
