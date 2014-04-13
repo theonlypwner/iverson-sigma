@@ -157,6 +157,14 @@ namespace iverson_sigma
         private void MainForm_Load(object sender, EventArgs e)
         {
             txtInput_LostFocus(sender, e);
+            toolTip.SetToolTip(txtInput, "Enter the space-separated numbers in the list.");
+            toolTip.SetToolTip(chkPartial, "Check to process only the sane subtrees.");
+            toolTip.SetToolTip(lblInfoNumber, "The item that the player decided to take.");
+            toolTip.SetToolTip(lblInfoOpposition, "The maximum possible value for the opponent.");
+            toolTip.SetToolTip(lblInfoValue, "The value for this move, if every following move is sane.");
+            toolTip.SetToolTip(lblInfoP1, "Player 1's points so far.");
+            toolTip.SetToolTip(lblInfoP2, "Player 2's points so far.");
+            toolTip.SetToolTip(lblInfoAccumulated, "Player 1's value so far.");
         }
 
         private void txtInput_LostFocus(object sender, EventArgs e)

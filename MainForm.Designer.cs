@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.lblList = new System.Windows.Forms.Label();
             this.grpInfo = new System.Windows.Forms.GroupBox();
@@ -40,6 +41,7 @@
             this.lblInfoOpposition = new System.Windows.Forms.Label();
             this.treeViewDecisions = new System.Windows.Forms.TreeView();
             this.chkPartial = new System.Windows.Forms.CheckBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.grpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +182,12 @@
             this.chkPartial.Text = "Partial";
             this.chkPartial.UseVisualStyleBackColor = true;
             // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 0;
+            this.toolTip.UseAnimation = false;
+            this.toolTip.UseFading = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -218,6 +226,7 @@
         private System.Windows.Forms.Label lblInfoP1;
         private System.Windows.Forms.Label lblInfoNumber;
         private System.Windows.Forms.CheckBox chkPartial;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
