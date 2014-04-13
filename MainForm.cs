@@ -102,7 +102,7 @@ namespace iverson_sigma
                     player, info1.number, info1.p1, -info1.p2, info1.p1 - info1.p2
                 ));
                 choice1.ToolTipText = String.Format(
-                    "Player {0} takes the final item, {1}; player 1 has {2} points, while player 2 has {3} points, and has a final value of {4}.",
+                    "P{0} takes the final item, {1}. P1 has {2} points; player 2 has {3} points, so P1 has a final value of {4}.",
                     player, info1.number, info1.p1, info1.p2, info1.p1 - info1.p2
                 );
                 choice1.Tag = info1;
@@ -117,7 +117,7 @@ namespace iverson_sigma
                     player, info1.number, -info1.opposition, info1.number - info1.opposition, info1.p1 - info1.p2
                 ));
                 choice1.ToolTipText = String.Format(
-                    "Player {0} takes the first item, {1}, leaving {2} for the opponent. So far, player 1 has accumulated {3} points, while player 2 has {4} points, and has a value of {5}.",
+                    "P{0} takes the first, {1}, leaving {2} for the opponent. So far, P1 has {3} points; player 2 has {4} points, so P1 has a value of {5}.",
                     player, info1.number, info1.opposition, info1.p1, info1.p2, info1.p1 - info1.p2
                 );
                 choice1.Tag = info1;
@@ -126,7 +126,7 @@ namespace iverson_sigma
                     player, info2.number, -info2.opposition, info2.number - info2.opposition, info2.p1 - info2.p2
                 ));
                 choice2.ToolTipText = String.Format(
-                    "Player {0} takes the first item, {1}, leaving {2} for the opponent. So far, player 1 has accumulated {3} points, while player 2 has {4} points, and has a value of {5}.",
+                    "P{0} takes the last, {1}, leaving {2} for the opponent. So far, P1 has {3} points; player 2 has {4} points, so P1 has a value of {5}.",
                     player, info2.number, info2.opposition, info2.p1, info2.p2, info2.p1 - info2.p2
                 );
                 choice2.Tag = info2;
