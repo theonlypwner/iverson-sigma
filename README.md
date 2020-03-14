@@ -1,7 +1,7 @@
 Iverson Exam Sigma Calculator
 ===========
 
-This calculates the value of a list for the sigma game from the 2013 Iverson Exam.
+This calculates the value of a list for the sigma game from the [2013 Iverson Exam](https://www.ualberta.ca/computing-science/explore/iverson-exam/preparation-exams-and-results.html).
 
 It also allows you to browse the entire decision tree.
 
@@ -13,7 +13,7 @@ This project is licensed under the GPL v3 licence.
 
 The logo is from Everaldo Coelho's Crystal Project Icons, which is licensed under the LGPL.
 
-Excerpt from Solution
+Excerpt from [Official Solution](https://www.ualberta.ca/computing-science/media-library/outreach/iverson/iverson2013sol.pdf)
 -----------
 **question 4: sigma game**
 
