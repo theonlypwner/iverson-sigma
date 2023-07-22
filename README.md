@@ -1,5 +1,4 @@
-Iverson Exam Sigma Calculator
-===========
+# Iverson Exam Sigma Calculator
 
 This calculates the value of a list for the sigma game from the [2013 Iverson Exam](https://www.ualberta.ca/computing-science/explore/iverson-exam/preparation-exams-and-results.html).
 
@@ -7,14 +6,14 @@ It also allows you to browse the entire decision tree.
 
 ![screenshot](screenshot.png)
 
-Licence
------------
+## Licence
+
 This project is licensed under the GPL v3 licence.
 
 The logo is from Everaldo Coelho's Crystal Project Icons, which is licensed under the LGPL.
 
-Excerpt from [Official Solution](https://www.ualberta.ca/computing-science/media-library/outreach/iverson/iverson2013sol.pdf)
------------
+## Excerpt from [Official Solution](https://www.ualberta.ca/computing-science/media-library/outreach/iverson/iverson2013sol.pdf)
+
 **question 4: sigma game**
 
 Alice and Bob play a game called *sigma*. The input is a list of numbers. Alice goes first. They
@@ -33,7 +32,7 @@ scores 1).
 
 &nbsp;&nbsp;Example: `[1 2 4]`. If Alice is sane then she takes 4.
 
-&nbsp;&nbsp;The value of a list is, for the game with that list, the score of the first player minus the score
+&nbsp;&nbsp;The *value* of a list is, for the game with that list, the score of the first player minus the score
 of the second player, assuming that each player is sane.
 
 &nbsp;&nbsp;Examples: value of `[5]` is `5-0=5`; value of `[5 1]` is `5-1=4`; value of `[1 2 4]` is `5-2=3`.
@@ -50,7 +49,7 @@ of the second player, assuming that each player is sane.
 (b) [2 marks] Bob says that a best strategy is to always take the larger available number, or
 either one if they are equal. Alice says Bob is wrong. Who is correct? Justify your answer.
 
-> Alice is correct. For [1 1 100 2], Alice’s scores -98 if she takes 2,
+> Alice is correct. For `[1 1 100 2]`, Alice’s scores -98 if she takes 2,
 > but 98 if she takes 1.
 
 (c) [3 marks] The value of a list can be computed from the values of its sublists. Fill in the
